@@ -1,0 +1,69 @@
+<html>
+<title>red ball part 1</title>
+<head>
+<script src="http://lrn.icstars.org/redball.js"></script>
+<script>
+function moveleft()
+{
+redball.left = redball.left - 15;
+}
+
+function moveright()
+{
+redball.left = redball.left + 15;
+}
+
+function moveup()
+{
+redball.top = redball.top - 15;
+}
+
+function movedown()
+{
+redball.top = redball.top + 15;
+}
+
+function movesquare()
+{
+redball.left = redball.left + 15;
+redball.left = redball.left + 15;
+redball.left = redball.left + 15;
+redball.left = redball.left + 15;
+redball.left = redball.left + 15;
+redball.left = redball.left + 15;
+redball.top = redball.top + 15;
+redball.top = redball.top + 15;
+redball.top = redball.top + 15;
+redball.top = redball.top + 15;
+redball.top = redball.top + 15;
+redball.top = redball.top + 15;
+redball.left = redball.left - 15;
+redball.left = redball.left - 15;
+redball.left = redball.left - 15;
+redball.left = redball.left - 15;
+redball.left = redball.left - 15;
+redball.left = redball.left - 15;
+redball.top = redball.top - 15;
+redball.top = redball.top - 15;
+redball.top = redball.top - 15;
+redball.top = redball.top - 15;
+redball.top = redball.top - 15;
+redball.top = redball.top - 15;
+}
+
+</script>
+</head>
+<body>
+
+<button onclick="moveleft();">move left!</button>
+<button onclick="moveright();">move right!</button>
+<button onclick="moveup();">move up!</button>
+<button onclick="movedown();">move down</button>
+<button onclick="movesquare();">move square</button>
+
+
+<!-- <button onclick="movesquare();">move square</button> -->
+<p> </p>
+<img src="redball1.jpg" id="redball">
+</body>
+</html>

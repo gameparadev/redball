@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+.ball{
+  position:absolute;
+  left:200px;
+  height:200px;
+  width:200px;
+  }
+</style>
+<script src= "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script>
+<script>
+function Ball(cssid)
+{
+   this.moveright=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.left=pos.left+20;
+		$(cssid).offset(pos);
+	}
+	this.moveleft=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.left=pos.left-20;
+		$(cssid).offset(pos);
+	}
+	this.movedown=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.top=pos.top+20;
+		$(cssid).offset(pos);
+	}
+	this.moveup=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.top=pos.top-20;
+		$(cssid).offset(pos);
+	}
+	this.movedownleft=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.top=pos.top+20;
+		pos.left=pos.left-20;
+		$(cssid).offset(pos);
+	}
+	this.movedownright=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.top=pos.top+20;
+		pos.left=pos.left+20;
+		$(cssid).offset(pos);
+	}
+	this.moveupright=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.top=pos.top-20;
+		pos.left=pos.left+20;
+		$(cssid).offset(pos);
+	}
+	this.moveupleft=function()
+   {
+		var pos=$(cssid).offset();
+		console.log("left "+pos.left);
+		console.log("top "+pos.top);
+		pos.top=pos.top-20;
+		pos.left=pos.left-20;
+		$(cssid).offset(pos);
+	}
+}
+var redball=new Ball("#redball");
+var blueball=new Ball("#blueball");	
+var purpleball=new Ball("#purpleball");
+var orangeball=new Ball("#orangeball");
+var blackball=new Ball("#blackball");
+var greenball=new Ball("#greenball");
+</script>
+</head>
+<body>
+<img src="redball.jpg" id="redball" class="ball"/>
+<img src="blueball.jpg" id="blueball" class="ball"/>
+<img src="orangeball.jpg" id="orangeball" class="ball"/>
+<img src="purpleball.jpg" id="purpleball" class="ball"/>
+<img src="blackball.jpg" id="blackball" class="ball"/>
+<img src="greenball.jpg" id="greenball" class="ball"/>
+</body>
+</html>

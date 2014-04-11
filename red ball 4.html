@@ -1,0 +1,402 @@
+<html>
+<title>Redball 06</title>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<style>
+#greenball{
+	position:absolute;
+	top:200px;
+	left:880px;}
+
+#blackball{
+	position:absolute;
+	left:600px;
+	top:600px;}
+
+#redball{
+	position:absolute;
+	top:380px;
+	left:500px;}	
+
+#blueball{
+	position:absolute;
+	top:400px;
+	left:880px;}	
+
+#table3{
+	position:absolute;
+	top:480px;}	
+
+
+#table4{
+	position:absolute; 
+	top:480px;
+	left:1200px;}
+
+table,tr,td{
+	border:1px solid black;}
+
+#wall {
+	background-color: midnightblue;
+	height: 520px;
+	width: 50px;
+	position:absolute;
+	top:110px;
+	left:780px;}
+
+</style>
+<h1><center>Beyond Blessed</h1></center>
+<!--  $("#ruarrow").click(function(){ 
+   greenball.moveupright();
+});-->
+
+<script>
+function ball(cssid)
+{
+ this.checkwallhit=function()
+ {
+		var hit=false;
+
+		var ballposition=$(cssid).offset();
+		var ballwidth=$(cssid).width();
+		var ballheight=$(cssid).height();
+		var balleft=ballposition.left;
+		var balltop=ballposition.top;
+		var ballright=balleft+ballwidth;
+		var ballbot=balltop+ballheight;
+
+		var wallposition=$("#wall").offset();
+		var wallwidth=$("#wall").width();
+		var wallheight=$("#wall").height();
+		var walleft=wallposition.left;
+		var walltop=wallposition.top;
+		var wallright=walleft+wallwidth;
+		var wallbot=walltop+wallheight;
+
+		if (ballright > walleft && 
+			balltop < wallbot && 
+			ballbot > walltop && 
+			balleft < wallright)
+ {
+			hit = true;}
+		return hit;}
+
+	this.moveright=function(){
+
+	var nothit = this.checkwallhit();
+		var position=$(cssid).offset();
+		console.log("left "+position.left);
+		console.log("top "+position.top);
+	if(nothit == false){position.left=position.left+20}
+	else{position.left=position.left-20;}
+		$(cssid).offset(position);}
+
+	this.movedown=function(){
+	var nothit = this.checkwallhit();
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+	if(nothit == false){position.top=position.top+20}
+		else{position.top=position.top-20;}
+		$(cssid).offset(position);}
+
+	this.moveleft=function(){
+	var nothit = this.checkwallhit();
+	var position=$(cssid).offset();
+		console.log("left "+position.left);
+	if(nothit == false){position.left=position.left-20}
+	else{position.left=position.left+20;}
+		$(cssid).offset(position);}
+
+	this.moveup=function(){
+	var nothit = this.checkwallhit();
+	var position=$(cssid).offset();
+		console.log("top "+position.top);
+	if(nothit == false){position.top=position.top-20}
+	else{position.top=position.top+20;}
+		$(cssid).offset(position);}
+
+	this.movediaglu=function()
+	{	var nothit = this.checkwallhit();
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		if(nothit == false){position.top=position.top-20
+		position.left=position.left-20}
+		else{position.top=position.top+20;
+		position.left=position.left+20;}
+		$(cssid).offset(position);
+	}
+	this.movediagru=function()
+	{	var nothit = this.checkwallhit();
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		if(nothit == false){position.top=position.top-20
+		position.left=position.left+20}
+		else{position.top=position.top+20;
+		position.left=position.left-20}
+		$(cssid).offset(position);
+	}
+	this.movediagld=function()
+	{	var nothit = this.checkwallhit();
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		if(nothit == false){position.top=position.top+20
+		position.left=position.left-20}
+		else{position.top=position.top-20;
+		position.left=position.left+20;}
+		$(cssid).offset(position);
+	}
+	this.movediagrd=function()
+	{	var nothit = this.checkwallhit();
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		if(nothit == false){position.top=position.top+20
+		position.left=position.left+20}
+		else{position.top=position.top-20;
+		position.left=position.left-20;}
+		$(cssid).offset(position);
+	}
+}
+
+var greenball=new ball("#greenball");
+var redball=new ball("#redball");
+var blackball=new ball("#blackball");
+var blueball=new ball("#blueball");
+
+</script>
+
+
+</head>
+
+<body>
+<div id="wall"></div>
+
+<img src="greenball.jpg" id="greenball" class="ball"/>
+<img src="redball.jpg" id="redball" class="ball"/>
+<img src="blackball.jpg" id="blackball" class="ball"/>
+<img src="blueball.jpg" id="blueball" class="ball"/>
+
+
+<table align="left" id="table1" class="table">
+	<tr>
+    <td><img src="arrow_ul.jpg" id="arrow_ul"/></td>
+    <td><img src="arrow_u.jpg" id="arrow_u"/></td>
+    <td><img src="arrow_ur.jpg" id="arrow_ur"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_l.jpg" id="arrow_l"/></td>
+    <td>Green</td>
+    <td><img src="arrow_r.jpg" id="arrow_r"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_dl.jpg" id="arrow_dl"/></td>
+    <td><img src="arrow_d.jpg" id="arrow_d"/></td>
+    <td><img src="arrow_dr.jpg" id="arrow_dr"/></td>
+  </tr>
+</table>
+<script>
+		$("#table1 #arrow_ul").click (function(){
+		greenball.movediaglu();
+	});
+
+		$("#table1 #arrow_u").click (function(){
+		greenball.moveup();
+	});
+
+		$("#table1 #arrow_ur").click (function(){
+		greenball.movediagru();
+	});
+
+	$("#table1 #arrow_l").click (function(){
+		greenball.moveleft();
+	});
+
+		$("#table1 #arrow_r").click (function(){
+		greenball.moveright();
+	});
+
+		$("#table1 #arrow_dl").click (function(){
+		greenball.movediagld();
+	});
+
+		$("#table1 #arrow_d").click (function(){
+		greenball.movedown();
+	});
+
+		$("#table1 #arrow_dr").click (function(){
+		greenball.movediagrd();
+	});
+
+</script>
+
+<table align="right" id="table2" class="table" >
+	 <tr>
+    <td><img src="arrow_ul.jpg" id="arrow_ul"/></td>
+    <td><img src="arrow_u.jpg" id="arrow_u"/></td>
+    <td><img src="arrow_ur.jpg" id="arrow_ur"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_l.jpg" id="arrow_l"/></td>
+    <td>red</td>
+    <td><img src="arrow_r.jpg" id="arrow_r"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_dl.jpg" id="arrow_dl"/></td>
+    <td><img src="arrow_d.jpg" id="arrow_d"/></td>
+    <td><img src="arrow_dr.jpg" id="arrow_dr"/></td>
+  </tr>
+</table>
+<script>
+		$("#arrow_button_ul_white").click (function(){
+		redball.movediagul();
+	});
+
+		$("#table2 #arrow_ul").click (function(){
+		redball.movediaglu();
+	});
+
+		$("#table2 #arrow_u").click (function(){
+		redball.moveup();
+	});
+
+		$("#table2 #arrow_ur").click (function(){
+		redball.movediagru();
+	});
+
+	$("#table2 #arrow_l").click (function(){
+		redball.moveleft();
+	});
+
+		$("#table2 #arrow_r").click (function(){
+		redball.moveright();
+	});
+
+		$("#table2 #arrow_dl").click (function(){
+		redball.movediagld();
+	});
+
+		$("#table2 #arrow_d").click (function(){
+		redball.movedown();
+	});
+
+		$("#table2 #arrow_dr").click (function(){
+		redball.movediagrd();
+	});
+
+</script>
+
+<table align="left" id="table3" class="table">
+	<tr>
+    <td><img src="arrow_ul.jpg" id="arrow_ul"/></td>
+    <td><img src="arrow_u.jpg" id="arrow_u"/></td>
+    <td><img src="arrow_ur.jpg" id="arrow_ur"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_l.jpg" id="arrow_l"/></td>
+    <td>black</td>
+    <td><img src="arrow_r.jpg" id="arrow_r"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_dl.jpg" id="arrow_dl"/></td>
+    <td><img src="arrow_d.jpg" id="arrow_d"/></td>
+    <td><img src="arrow_dr.jpg" id="arrow_dr"/></td>
+  </tr>
+</table>
+<script>
+$("#arrow_button_ul_white").click (function(){
+		blackball.movediagul();
+	});
+	</script>
+	<script>
+		$("#table3 #arrow_ul").click (function(){
+		blackball.movediaglu();
+	});
+
+		$("#table3 #arrow_u").click (function(){
+		blackball.moveup();
+	});
+
+		$("#table3 #arrow_ur").click (function(){
+		blackball.movediagru();
+	});
+
+	    $("#table3 #arrow_l").click (function(){
+		blackball.moveleft();
+	});
+
+		$("#table3 #arrow_r").click (function(){
+		blackball.moveright();
+	});
+
+		$("#table3 #arrow_dl").click (function(){
+		blackball.movediagld();
+	});
+
+		$("#table3 #arrow_d").click (function(){
+		blackball.movedown();
+	});
+
+		$("#table3 #arrow_dr").click (function(){
+		blackball.movediagrd();
+	});
+
+
+</script>
+
+<table align="right" id="table4" class="table">
+	<tr>
+    <td><img src="arrow_ul.jpg" id="arrow_ul"/></td>
+    <td><img src="arrow_u.jpg" id="arrow_u"/></td>
+    <td><img src="arrow_ur.jpg" id="arrow_ur"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_l.jpg" id="arrow_l"/></td>
+    <td>blue</td>
+    <td><img src="arrow_r.jpg" id="arrow_r"/></td>
+  </tr>
+  <tr>
+    <td><img src="arrow_dl.jpg" id="arrow_dl"/></td>
+    <td><img src="arrow_d.jpg" id="arrow_d"/></td>
+    <td><img src="arrow_dr.jpg" id="arrow_dr"/></td>
+  </tr>
+</table>
+<script>
+		$("#arrow_button_ul_white").click (function(){
+		blueball.movediagul();
+	});
+	</script>
+	<script>
+		$("#table4 #arrow_ul").click (function(){
+		blueball.movediaglu();
+	});
+
+		$("#table4 #arrow_u").click (function(){
+		blueball.moveup();
+	});
+
+		$("#table4 #arrow_ur").click (function(){
+		blueball.movediagru();
+	});
+
+	    $("#table4 #arrow_l").click (function(){
+		blueball.moveleft();
+	});
+
+		$("#table4 #arrow_r").click (function(){
+		blueball.moveright();
+	});
+
+		$("#table4 #arrow_dl").click (function(){
+		blueball.movediagld();
+	});
+
+		$("#table4 #arrow_d").click (function(){
+		blueball.movedown();
+	});
+
+		$("#table4 #arrow_dr").click (function(){
+		blueball.movediagrd();
+	});
+   
+
+</body>
+</html>

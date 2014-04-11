@@ -1,0 +1,551 @@
+<html>
+
+<head> 
+
+<!-- other things that go in the header --> 
+
+< 
+
+<title>Red Ball Part1</title>
+
+<script src="http://lrn.icstars.org/redball.js">
+
+</script>
+
+<script>
+
+ function moveleft()
+
+ {
+
+  redball.left= redball.left-25;
+
+ }
+
+ function mysayHello()
+
+ {
+
+ alert("Hello Jasmine Harper");
+
+}
+
+ function moveright()
+
+ {
+
+  redball.left= redball.left+25;
+
+ }
+
+ function moveup()
+
+ {
+
+  redball.top= redball.top-25;
+
+ }
+
+ function movedown()
+
+ {
+
+  redball.top= redball.top+25;
+
+ }
+
+ function movesquare()
+
+ {
+
+	for(var i=1;i<=8;i++)
+
+		{
+
+		moveright();
+
+		}
+
+    for(var i=1;i<=8;i++)
+
+		{
+
+		movedown();
+
+		}
+
+    for(var i=1;i<=8;i++)
+
+		{
+
+		moveleft();
+
+		}
+
+    for(var i=1;i<=8;i++)
+
+		{
+
+		moveup();
+
+		}
+
+ 
+
+  }
+
+  function movediamond()
+
+  {
+
+      moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+	 moveup();
+
+     moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+	 movedown();
+
+	 moveright();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+	 moveleft();
+
+	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+	}
+
+ 	function movetriangle()
+
+ 	{
+
+ 	   moveright();
+
+ 	   moveup();
+
+ 	   moveright();
+
+ 	   moveup();
+
+ 	   moveright();
+
+ 	   moveup();
+
+ 	   moveright();
+
+ 	   moveup();
+
+ 	   moveright();
+
+	   moveup();
+
+ 	   moveright();
+
+ 	   moveup();
+
+ 	   movedown();
+
+ 	   moveright();
+
+ 	   movedown();
+
+ 	   moveright();
+
+ 	   movedown();
+
+ 	   moveright();
+
+ 	   movedown();
+
+ 	   moveright();
+
+ 	   movedown();
+
+ 	   moveright();
+
+ 	   movedown();
+
+ 	   moveright();
+
+ 	   for(var i=1;i<=12;i++)
+
+		{
+
+		moveleft();
+
+		}
+
+ 	}
+
+ 	function bouncingball()
+
+ 	{
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+	 moveup();
+
+	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+	 moveup();
+
+	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+	 moveright();
+
+	 moveup();
+
+ 	 moveright();
+
+ 	 moveup();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+	 movedown();
+
+ 	 moveright();
+
+	  movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 movedown();
+
+ 	 moveright();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveleft();
+
+ 	 movedown();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+	 moveleft();
+
+	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	 moveup();
+
+ 	 moveleft();
+
+ 	}
+
+	function moveup10()
+
+	{
+
+		for(var i=1;i<=10;i++)
+
+		{
+
+		moveup();
+
+		}
+
+	}
+
+  </script>
+
+ </head>
+
+ <body>
+
+ <button onclick="mysayHello();">HelloWorld</button>
+
+ <button onclick="moveleft();">MoveLeft</button>
+
+ <button onclick="moveright();">MoveRight</button>
+
+ <button onclick="moveup();">MoveUp</button>
+
+ <button onclick="movedown();">MoveDown</button>
+
+ <button onclick="movesquare();">MoveSquare</button>
+
+ <button onclick="movediamond();">MoveDiamond</button>
+
+ <button onclick="movetriangle();">MoveTriangle</button>
+
+ <button onclick="bouncingball();">BouncingBall</button>
+
+ <button onclick="moveup10();">Up 10</button>
+
+ <img id="redball" src="redball.jpg">
+
+ </body>
+
+ </html>
